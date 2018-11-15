@@ -46,7 +46,7 @@ import static cxf.flume.sink.kafka.NewKafkaSinkConstants.*;
 
 
 /**
- * A Flume Sink that can publish messages to Kafka.
+ * A Flume Sink that can publish messages to Kafka 2.0.0.
  * This is a general implementation that can be used with any Flume agent and
  * a channel.
  * The message can be any event and the key is a string that we read from the
