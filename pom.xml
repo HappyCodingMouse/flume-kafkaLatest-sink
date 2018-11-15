@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cxf.flume.flume-ng-sink</groupId>
+    <artifactId>flume-kafkaLatest-sink</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!-- Set default encoding to UTF-8 to remove maven complaints -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Java compiler configuration -->
+        <sourceJavaVersion>1.8</sourceJavaVersion>
+        <targetJavaVersion>1.8</targetJavaVersion>
+
+        <flume-ng-core.version>1.8.0</flume-ng-core.version>
+        <kafka.version>2.0.0</kafka.version>
+    </properties>
+
+    <dependencies>
+        <!--<dependency>-->
+        <!--<groupId>junit</groupId>-->
+        <!--<artifactId>junit</artifactId>-->
+        <!--<version>${junit.version}</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.flume</groupId>
+            <artifactId>flume-ng-core</artifactId>
+            <version>${flume-ng-core.version}</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apache.flume.flume-shared</groupId>-->
+        <!--<artifactId>flume-shared-kafka-test</artifactId>-->
+        <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.11</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apache.zookeeper</groupId>-->
+        <!--<artifactId>zookeeper</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.mockito</groupId>-->
+        <!--<artifactId>mockito-all</artifactId>-->
+        <!--<version>${mockito.version}</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.apache.kafka</groupId>-->
+        <!--<artifactId>kafka_2.11</artifactId>-->
+        <!--<classifier>test</classifier>-->
+        <!--<scope>test</scope>-->
+        <!--</dependency>-->
+    </dependencies>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://192.168.1.4:18081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>releases</id>
+            <url>http://192.168.1.4:18081/nexus/content/repositories/releases</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5</version>
+                <configuration>
+                    <source>${sourceJavaVersion}</source>
+                    <target>${targetJavaVersion}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+
+</project>
